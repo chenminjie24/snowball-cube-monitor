@@ -1,0 +1,24 @@
+{
+  "snowball": {
+    "token": "你的雪球Token"
+  },
+  "pushdeer": {
+    "pushkey": "你的PushDeer推送key",
+    "server": "https://api2.pushdeer.com"
+  },
+  "monitor": {
+    "check_interval": 60,
+    "active_hours": {
+      "start": "09:25",
+      "end": "16:00",
+      "timezone": "Asia/Shanghai"
+    },
+    "sleep_interval_inactive": 300,
+    "cubes": [
+      {
+        "id": "ZH3126091",
+        "name": "管我财-组合"
+      }
+    ]
+  }
+}
