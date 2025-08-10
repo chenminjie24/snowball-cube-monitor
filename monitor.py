@@ -69,11 +69,13 @@ class SnowballMonitor:
     def _get_latest_rebalancing(self, cube_id: str) -> Dict[str, Any]:
         """获取组合的最新调仓记录"""
         try:
-            # 获取最新的调仓记录（只获取第一条）
-            result = ball.rebalancing_history(cube_id, 1, 1)
+            # 获取最新的调仓记录（只获取前10条）
+            result = ball.rebalancing_history(cube_id, 10, 1)
             
             if result and 'list' in result and result['list']:
-                return result['list'][0]
+                for item in result['list']:
+                    if item['status'] == 'success':
+                        return item
             else:
                 return {}
         except Exception as e:
